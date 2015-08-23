@@ -11,3 +11,8 @@ tidyMergedData is created out of selecting tidyFeatures from mergedData.
 
 The test and train subjects are merged into mergedSubject.
 
+The Activitiy names are looked up from the activityLabels.
+
+The Subject and Activity are added to the tidyMergedData.
+
+The averages of means and stds are calcualted by running summarise_each() of ddply, and the output is written to a file(final.txt).
