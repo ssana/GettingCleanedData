@@ -10,7 +10,6 @@ tidyMergedData <- mergedData[, tidyFeatures]
 trainSubject <- read.table("F:./././UCIHARDataset/train/subject_train.txt", header = FALSE)
 testSubject <- read.table("F:./././UCIHARDataset/test/subject_test.txt", header = FALSE)
 mergedSubject <- rbind(testSubject, trainSubject)
-tempMergedData$Subject <- mergedSubject
 activityLabels <- read.table("F:./././UCIHARDataset/activity_labels.txt", header = FALSE)
 activityNames <- as.vector(activityLabels$V2)
 testActivity <- read.table("F:./././UCIHARDataset/test/y_test.txt", header = FALSE)
@@ -30,7 +29,6 @@ trainActivityNames[i] = activityNames[trainActivities[i, ]]
 i = i + 1
 }
 actvities <- as.data.frame(c(testActivityNames, trainActivityNames))
-tempMergedData$Activity <- actvities
 tidyMergedData[, "Subject"] <- mergedSubject
 tidyMergedData$Activity <- actvities
 tidyMergedData[, "Activity"] <- actvities
